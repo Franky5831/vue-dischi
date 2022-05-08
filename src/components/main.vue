@@ -1,10 +1,10 @@
 <template>
 <main>
-    <div class="card">
-        <img src="../../src/assets/logo.png" alt="">
-        <h1>title</h1>
-        <h2>author</h2>
-        <h3>date</h3>
+    <div class="card" v-for="(item, index) in albums" :key="index.id">
+        <img :src="item.poster" alt="">
+        <h1>{{item.title}}</h1>
+        <h2>{{item.author}}</h2>
+        <h3>{{item.year}}</h3>
     </div>
 
 </main>
@@ -23,6 +23,8 @@ export default {
     mounted(){
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((res)=>{
             console.log(res)
+            this.albums = res.data.response
+            console.log(this.albums)
         })
     }
 }
@@ -31,15 +33,16 @@ export default {
 <style scoped lang="scss">
 main{
     height: calc(100vh - 60px);
-    background-color: #1E2D3B;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 0 15%;
 
     .card{
         background-color: #2E3A46;
-        width: 12.5%;
-        min-height: 40%;
+        width: 18%;
         text-align: center;
 
         img{

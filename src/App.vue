@@ -30,4 +30,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+body{
+      background-color: #1E2D3B;
+}
 </style>
