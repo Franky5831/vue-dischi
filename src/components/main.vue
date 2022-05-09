@@ -1,10 +1,19 @@
 <template>
-<main >
-    <div class="card" v-show="/*this.searchedAlbum.tolowercase() === item.title.tolowercase()*/ true" v-for="(item, index) in albums" :key="index.id">
-        <img :src="item.poster" alt="">
-        <h1>{{item.title}}</h1>
-        <h2>{{item.author}}</h2>
-        <h3>{{item.year}}</h3>
+<main>
+    <div id="selects">
+        <select name="genere" id="selectGenere">
+            <option value="rock">Rock</option>
+        </select>
+    </div>
+    <div id="containerCards">
+        
+        <div class="card" v-show="/*this.searchedAlbum.tolowercase() === item.title.tolowercase()*/ true" v-for="(item, index) in albums" :key="index.id">
+            <img :src="item.poster" alt="">
+            <h1>{{item.title}}</h1>
+            <h2>{{item.author}}</h2>
+            <h3>{{item.year}}</h3>
+        </div>
+
     </div>
 
 </main>
@@ -31,37 +40,38 @@ export default {
 <style scoped lang="scss">
 main{
     height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2%;
-    padding: 0 15%;
-
-    .card{
-        background-color: #2E3A46;
-        width: 18%;
-        text-align: center;
-
-        img{
-            width: 80%;
-            margin: 10%;
-            background-color: red;
-        }
-        h1{
-            color: white;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        h2, h3{
-            color: #807872;
-            font-size: 1em;
-        }
-        h3{
-            margin-bottom: 20px;
+    #containerCards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2%;
+        padding: 0 15%;
+        .card{
+            background-color: #2E3A46;
+            width: 18%;
+            text-align: center;
+            img{
+                width: 80%;
+                margin: 10%;
+            }
+            h1{
+                color: white;
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+            h2, h3{
+                color: #807872;
+                font-size: 1em;
+            }
+            h3{
+                margin-bottom: 20px;
+            }
         }
     }
+
+
 }
 
 </style>
