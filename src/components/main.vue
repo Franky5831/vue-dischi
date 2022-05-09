@@ -30,7 +30,7 @@ export default {
 
 <style scoped lang="scss">
 main{
-    height: calc(100vh - 60px);
+    height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,16 +50,16 @@ main{
         }
         h1{
             color: white;
-            font-size: 2em;
-            margin-bottom: 10%;
+            font-size: 1.5em;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
         h2, h3{
             color: #807872;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         h3{
-            margin-bottom: 10%;
+            margin-bottom: 20px;
         }
     }
 }
