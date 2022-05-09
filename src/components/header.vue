@@ -1,5 +1,6 @@
 <template>
 <header>
+    <img src="../assets/spotify.png" alt="">
 </header>
 </template>
 
@@ -17,11 +18,9 @@ export default {
 header{
     background-color: #2E3A46;
 
-    input{
-        background-color: #2E3A46;
-        width: 100%;
-        height: 60px;
-        border: 0;
+    img{
+        height: 100px;
+        padding: 20px;
     }
 }
 </style>
