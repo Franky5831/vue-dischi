@@ -1,13 +1,17 @@
 <template>
 <main>
     <div id="selects">
-        <select name="genere" id="selectGenere">
-            <option value="rock">Rock</option>
+        <select name="genere" id="selectGenere" v-model="selected"  @keydown.enter="debug">
+          <option disabled value="">Filtra i generi</option>
+            <option value="">All</option>
+            <option>Rock</option>
+            <option>Pop</option>
+            <option>Jazz</option>
+            <option>Metal</option>
         </select>
     </div>
     <div id="containerCards">
-        
-        <div class="card" v-show="/*this.searchedAlbum.tolowercase() === item.title.tolowercase()*/ true" v-for="(item, index) in albums" :key="index.id">
+        <div class="card" v-show="selected === item.genre || selected === ''" v-for="(item, index) in albums" :key="index.id">
             <img :src="item.poster" alt="">
             <h1>{{item.title}}</h1>
             <h2>{{item.author}}</h2>
@@ -26,7 +30,13 @@ export default {
     name: 'AppMain',
     data(){
         return{
+            selected: '',
             albums:[]
+        }
+    },
+    methods:{
+        debug(){
+            console.log(this.selected)
         }
     },
     mounted(){
@@ -35,11 +45,27 @@ export default {
         })
     },
 }
+
 </script>
 
 <style scoped lang="scss">
 main{
     height: calc(100vh - 100px);
+    #selects{
+        display: flex;
+        justify-content: flex-end;
+        gap: 40px;
+        padding: 20px;
+        select{
+            background-color: #2E3A46;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+            font-size: 1.3rem;
+        }
+    }
+
+
     #containerCards{
         display: flex;
         justify-content: center;
