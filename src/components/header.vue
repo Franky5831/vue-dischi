@@ -1,14 +1,21 @@
 <template>
 <header>
-    <input type="text">
+    <input type="text"  v-model="searchedAlbum" @keyup="findAlbum()">
 </header>
 </template>
 
 
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    methods:{
+        findAlbum(){
+            console.log('trovalo', this.searchedAlbum)
+        }
+    }
 }
+
+
 </script>
 
 <style scoped lang="scss">

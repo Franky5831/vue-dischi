@@ -1,6 +1,6 @@
 <template>
-<main>
-    <div class="card" v-for="(item, index) in albums" :key="index.id">
+<main >
+    <div class="card" v-show="/*this.searchedAlbum.tolowercase() === item.title.tolowercase()*/ true" v-for="(item, index) in albums" :key="index.id">
         <img :src="item.poster" alt="">
         <h1>{{item.title}}</h1>
         <h2>{{item.author}}</h2>
@@ -22,11 +22,9 @@ export default {
     },
     mounted(){
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((res)=>{
-            console.log(res)
             this.albums = res.data.response
-            console.log(this.albums)
         })
-    }
+    },
 }
 </script>
 
