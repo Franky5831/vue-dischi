@@ -1,6 +1,5 @@
 <template>
 <header>
-    <input type="text"  v-model="searchedAlbum" @keyup="findAlbum()">
 </header>
 </template>
 
@@ -8,11 +7,7 @@
 <script>
 export default {
     name: 'AppHeader',
-    methods:{
-        findAlbum(){
-            console.log('trovalo', this.searchedAlbum)
-        }
-    }
+    methods:{}
 }
 
 
