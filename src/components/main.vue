@@ -1,17 +1,33 @@
 <template>
 <main>
     <div id="selects">
-        <select name="genere" id="selectGenere" v-model="selected"  @keydown.enter="debug">
-          <option disabled value="">Filtra i generi</option>
+        <select name="genere" id="selectGenere" v-model="selectedGen">
+            <option disabled value="">Filter the genres</option>
             <option value="">All</option>
             <option>Rock</option>
             <option>Pop</option>
             <option>Jazz</option>
             <option>Metal</option>
         </select>
+
+        <select name="artist" id="selectArtist" v-model="selectedArt">
+            <option disabled value="">Filter the artists</option>
+            <option>Bon Jovi</option>
+            <option>Queen</option>
+            <option>Sting</option>
+            <option>Steve Gadd Band</option>
+            <option>Iron Maiden</option>
+            <option>Eric Clapton</option>
+            <option>Deep Purple</option>
+            <option>Metallica</option>
+            <option>Dave Weckl</option>
+            <option>Michael Jacjson</option>
+        </select>
     </div>
     <div id="containerCards">
-        <div class="card" v-show="selected === item.genre || selected === ''" v-for="(item, index) in albums" :key="index.id">
+        <div class="card"
+        v-show="(selectedGen === item.genre || selectedGen === '') && (selectedArt === item.author || selectedArt === '')"
+        v-for="(item, index) in albums" :key="index.id">
             <img :src="item.poster" alt="">
             <h1>{{item.title}}</h1>
             <h2>{{item.author}}</h2>
@@ -30,13 +46,9 @@ export default {
     name: 'AppMain',
     data(){
         return{
-            selected: '',
+            selectedGen: '',
+            selectedArt: '',
             albums:[]
-        }
-    },
-    methods:{
-        debug(){
-            console.log(this.selected)
         }
     },
     mounted(){
