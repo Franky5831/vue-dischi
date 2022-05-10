@@ -2,7 +2,6 @@
   <div id="app">
     <app-header />
     <app-main />
-    <app-footer />
   </div>
 </template>
 
@@ -15,9 +14,7 @@ export default {
   components:{
     AppHeader,
     AppMain
-  },
-  data(){},
-  methods:{}
+  }
 }
 
 
