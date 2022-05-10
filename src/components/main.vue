@@ -3,7 +3,7 @@
     <div id="selects">
         <select name="genere" id="selectGenere" v-model="selectedGen">
             <option disabled value="">Filter the genres</option>
-            <option value="">All</option>
+            <option value="">All the genres</option>
             <option>Rock</option>
             <option>Pop</option>
             <option>Jazz</option>
@@ -12,6 +12,7 @@
 
         <select name="artist" id="selectArtist" v-model="selectedArt">
             <option disabled value="">Filter the artists</option>
+            <option value="">All the artists</option>
             <option>Bon Jovi</option>
             <option>Queen</option>
             <option>Sting</option>
@@ -88,6 +89,7 @@ main{
         .card{
             background-color: #2E3A46;
             width: 18%;
+            min-width: 180px;
             text-align: center;
             img{
                 width: 80%;
